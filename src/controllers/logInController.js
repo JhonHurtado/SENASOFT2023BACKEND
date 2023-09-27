@@ -7,16 +7,13 @@ export const logIn = async(req,res)=>{
     try {
         //extract parameters from request
         const {email,password} = req.body;
-        if (!email || !password) {
-            return res.status(400).json(" !All data is required! ");
-          }
           //search user in database
         const UserFound = await UserModel.findOne({ email: email })
         if (!UserFound) {
             return res.status(404).json(" !User not found! ");
           }
           //Validar la contraseña
-        const passwordValid = await UserFound.comparePassword(password);
+        const passwordValid = await UserFound.comparePassword(password,UserFound.password);
         if (!passwordValid) {
             return res.status(401).json(" !Password incorrect! ");
           }
@@ -25,7 +22,7 @@ export const logIn = async(req,res)=>{
             expiresIn: 86400, //24 hours
           });
             //Send response
-        res.status(200).json({ token });
+        res.status(200).json({ token:token,message:"Acceso correcto" });
 
 
     } catch (error) {

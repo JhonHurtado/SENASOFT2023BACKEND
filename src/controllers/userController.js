@@ -3,13 +3,15 @@ import UserModel from '../models/userModel.js';
 export const createUser = async(req,res)=>{
     try {
         const data = req.body
+        console.log(data)
         const password = await UserModel.encryptPassword(data.password)
         const user = new UserModel(data)
         user.password = password
         await user.save()
         res.status(200).json({message:'User created successfully', user});
     } catch (error) {
-        res.status(500).json({message:"unable to register user",error});
+        console.log(error)
+        res.status(500).json({message:"unable to register user",error:error});
     }
 }
 

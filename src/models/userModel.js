@@ -14,24 +14,32 @@ const userSchema = new Schema({
     numberDocument:{type:String, required:true},
     typeDocument:{type:String, required:true},
     roleId:{type:Schema.Types.ObjectId,ref:Role,required:true},
-    typeLearnId:{type:Schema.Types.ObjectId,ref:TypeLearn,required:true},
-    status:{type:Number, default:1}
+    typeLearnId:{type:Schema.Types.ObjectId,ref:TypeLearn,default:null},
+    status:{type:Boolean, default:true}
 },{
     versionKey:false,
     timestamps:true
 })
 
-userSchema.methods.encryptPassword = async (password) => {
+userSchema.statics.encryptPassword = async (password) => {
     const salt = await bcryptjs.genSalt(10);
     return await bcryptjs.hash(password, salt);
 }
 
-userSchema.statics.comparePassword = async function(password,candidatePassword) {
+userSchema.methods.comparePassword = async function(password,candidatePassword) {
   try {
+    console.log()
     return await bcryptjs.compare(password,candidatePassword);
   } catch (error) {
+    console.log(error+"dhdhd")
     throw error;
   }
 };
 
 export default model('User',userSchema);
+
+
+
+
+
+
