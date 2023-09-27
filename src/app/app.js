@@ -5,6 +5,7 @@ import '../database/db.js';
 import '../helper/createRole.js';
 import '../helper/insertQuestions.js';
 import '../helper/insertBaseAnswer.js';
+import helmet from 'helmet';
 
 
 // import routes 
@@ -18,13 +19,15 @@ import testRouter from '../routes/testRouter.js';
 import typeLearnRouter from '../routes/typeLearnRouter.js';
 import userRouter from '../routes/userRouter.js';
 import logOut from '../routes/logOut.js';
+import BaseAnswer from '../routes/baseAnswerRouter.js';
 
 
 
-
+// config server
 const app = express();
 
 app.use(cors());
+app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -41,6 +44,7 @@ app.use('/api/test', testRouter);
 app.use('/api/typeLearn', typeLearnRouter);
 app.use('/api/user', userRouter);
 app.use('/api/logOut', logOut);
+app.use('/api/baseAnswer', BaseAnswer);
 
 
 
