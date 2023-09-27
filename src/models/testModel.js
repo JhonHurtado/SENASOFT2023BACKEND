@@ -2,6 +2,7 @@ import {Schema,model} from 'mongoose';
 
 const testSchema = new Schema({
     question:{type:String,required:true},
+    consecutive:{type:Number,required:true}
 },{
     versionKey:false,
     timestamps:true
@@ -9,3 +10,8 @@ const testSchema = new Schema({
 
 
 export default model('Test',testSchema);
+
+
+
+
+

@@ -16,7 +16,7 @@ export const createTest = async (req, res) => {
 
 export const getTests = async (req, res) => {
   try {
-    const testsFound = await TestModel.find();
+    const testsFound = await TestModel.find({}).sort({ consecutive: 1 });
     if (!testsFound) {
       res.status(200).json({ message: "tests empty", testsFound });
     }

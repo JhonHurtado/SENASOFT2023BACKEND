@@ -2,7 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import '../database/db.js'; 
-import '../middlewares/createRole.js';
+import '../helper/createRole.js';
+import '../helper/insertQuestions.js';
+import '../helper/insertBaseAnswer.js';
 
 
 // import routes 
@@ -15,6 +17,7 @@ import roleRouter from '../routes/roleRouter.js';
 import testRouter from '../routes/testRouter.js';
 import typeLearnRouter from '../routes/typeLearnRouter.js';
 import userRouter from '../routes/userRouter.js';
+import logOut from '../routes/logOut.js';
 
 
 
@@ -37,6 +40,7 @@ app.use('/api/role', roleRouter);
 app.use('/api/test', testRouter);
 app.use('/api/typeLearn', typeLearnRouter);
 app.use('/api/user', userRouter);
+app.use('/api/logOut', logOut);
 
 
 
