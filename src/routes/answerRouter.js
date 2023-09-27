@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import {createAnswer,deleteAnswer,getAnswer,getAnswers,updateAnswer} from '../controllers/answerController.js';
-import validateAnswers from '../validators/answers.js';
+import {validateAnswers} from '../validators/answers.js';
 
 const router = Router();
 

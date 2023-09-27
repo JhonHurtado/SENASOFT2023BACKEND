@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import {createTypeLearn,deleteTypeLearn,getTypeLearn,getTypeLearns,updateTypeLearn} from '../controllers/typeLearnController.js';
-import validateTypeLearn from '../validators/typeLearn.js';
+import {validateTypeLearn} from '../validators/typeLearn.js';
 
 const router = Router();
 

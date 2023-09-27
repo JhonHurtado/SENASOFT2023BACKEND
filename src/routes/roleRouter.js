@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import {createRole,deleteRole,getRole,getRoles,updateRole} from '../controllers/roleController.js';
-import validateRole from '../validators/role.js';
+import {validateRole} from '../validators/role.js';
 
 const router = Router();
 

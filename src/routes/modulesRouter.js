@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import {createModule,deleteModule,getModule,getModules,updateModule} from '../controllers/modulesController.js';
-import validateModule from '../validators/module.js';
+import {validateModule} from '../validators/module.js';
 
 const router = Router();
 

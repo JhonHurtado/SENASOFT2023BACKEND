@@ -1,6 +1,6 @@
 import {Router} from 'express';
 import {createResource,deleteResource,getResource,getResources,updateResource} from '../controllers/resourcesController.js';
-import validateResource from '../validators/resource.js';
+import {validateResource} from '../validators/resource.js';
 
 const router = Router();
 
