@@ -1,5 +1,4 @@
 import UserModel from '../models/userModel.js';
-import bcryptjs from 'bcryptjs';
 
 export const createUser = async(req,res)=>{
     try {
