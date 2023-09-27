@@ -1,5 +1,7 @@
 import {Schema,model} from 'mongoose';
 import bcryptjs from 'bcryptjs';
+import Role from './roleModel.js';
+import TypeLearn from './typeLearn.js';
 
 const userSchema = new Schema({
     name:{type:String, required:true},
@@ -11,8 +13,8 @@ const userSchema = new Schema({
     program:{type:String, required:true},
     numberDocument:{type:String, required:true},
     typeDocument:{type:String, required:true},
-    roleId:{type:Schema.Types.ObjectId,ref:'Role',required:true},
-    typeLearnId:{type:Schema.Types.ObjectId,ref:'Role',required:true},
+    roleId:{type:Schema.Types.ObjectId,ref:Role,required:true},
+    typeLearnId:{type:Schema.Types.ObjectId,ref:TypeLearn,required:true},
     status:{type:Number, default:1}
 },{
     versionKey:false,

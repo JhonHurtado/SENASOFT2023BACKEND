@@ -1,4 +1,5 @@
 import {Schema,model} from 'mongoose';
+import Modules from './modulesModel.js';
 
 
 const resourceSchema = new Schema({

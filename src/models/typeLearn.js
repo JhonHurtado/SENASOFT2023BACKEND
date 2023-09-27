@@ -8,3 +8,5 @@ const typeLearnSchema = new Schema({
     versionKey:false,
     timestamps:true
 })
+
+export default model('TypeLearn',typeLearnSchema);

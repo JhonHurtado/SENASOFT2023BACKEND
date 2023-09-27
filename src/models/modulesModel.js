@@ -1,4 +1,5 @@
 import {Schema,model} from 'mongoose';
+import Category from './categoryModel.js';
 
 const moduleSchema = new Schema({
     nameModule:{type:String,required:true},
