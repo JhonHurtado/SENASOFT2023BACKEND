@@ -12,7 +12,7 @@ export const logIn = async(req,res)=>{
         if (!UserFound) {
             return res.status(404).json(" !User not found! ");
           }
-          //Validar la contraseña
+          //validate password
         const passwordValid = await UserFound.comparePassword(password,UserFound.password);
         if (!passwordValid) {
             return res.status(401).json(" !Password incorrect! ");

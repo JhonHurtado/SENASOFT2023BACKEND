@@ -2,8 +2,11 @@ import TestModel from "../models/testModel.js";
 
 export const createTest = async (req, res) => {
   try {
-    const data = req.body;
-    const test = new TestModel(data);
+    const {question} = req.body;
+    if(!question){
+      res.status(400).json({ message: "please enter the question" });
+    }
+    const test = new TestModel(question);
     await test.save();
     res.status(200).json({ message: "test created successfully", test });
   } catch (error) {
