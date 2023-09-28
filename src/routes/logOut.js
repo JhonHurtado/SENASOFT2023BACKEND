@@ -1,9 +1,9 @@
 import {Router} from 'express';
-import logOut from '../controllers/logOutController.js';
+import {logOutController} from '../controllers/logOutController.js';
 
 const router = Router();
 
-router.post('/',logOut)
+router.post('/',logOutController)
 
 
 export default router;
