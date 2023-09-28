@@ -12,7 +12,6 @@ export const validateUser = [
     .isEmpty()
     .isNumeric(),
   check("typeDocument", "typeDocument is required").not().isEmpty().isString(),
-  check("roleId", "roleId is required").not().isEmpty(),
   check("email", "Email is required").isEmail(),
   check("password", "Password is required").not().isEmpty().isString(),
   (req, res, next) => {
