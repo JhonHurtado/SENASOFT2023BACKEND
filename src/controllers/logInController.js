@@ -22,7 +22,7 @@ export const logIn = async(req,res)=>{
             expiresIn: 86400, //24 hours
           });
             //Send response
-        res.status(200).json({ token:token,message:"Acceso correcto" });
+        res.status(200).json({ token:token,message:"Acceso correcto",idUser:UserFound._id});
 
 
     } catch (error) {
