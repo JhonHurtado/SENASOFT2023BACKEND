@@ -15,7 +15,6 @@ export const validateUser = [
   check("roleId", "roleId is required").not().isEmpty(),
   check("email", "Email is required").isEmail(),
   check("password", "Password is required").not().isEmpty().isString(),
-  check("roleId", "Role is required").not().isEmpty(),
   (req, res, next) => {
     validateResult(req,res,next)
   },

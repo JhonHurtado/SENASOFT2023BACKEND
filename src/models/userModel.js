@@ -13,7 +13,7 @@ const userSchema = new Schema({
     program:{type:String, required:true},
     numberDocument:{type:String, required:true},
     typeDocument:{type:String, required:true},
-    roleId:{type:Schema.Types.ObjectId,ref:Role,required:true},
+    roleId:{type:Schema.Types.ObjectId,ref:Role,default:"651429763cdfa17cb5fc0757"},
     typeLearnId:{type:Schema.Types.ObjectId,ref:TypeLearn,default:null},
     status:{type:Boolean, default:true}
 },{
