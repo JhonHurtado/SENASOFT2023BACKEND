@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import {SECRET_JWT} from '../config/config.js';
 
-const logOutController = (req, res) => {
+export const logOutController = (req, res) => {
     try {
         const token = req.headers["access-token"];
         if(!token){
